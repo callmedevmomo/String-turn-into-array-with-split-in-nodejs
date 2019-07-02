@@ -24,9 +24,9 @@ export const loveNico = (req, res) => {
     body: { title, synopsis, genres }
   } = req;
   console.log(typeof method);
-  if (method == "GET") {
+  if (method === "GET") {
     res.render("add", { pageTitle: "Add Movies!" });
-  } else if (method == "POST") {
+  } else if (method === "POST") {
     const arrayset = genres.split(",").map(String);
     const movies = { title, synopsis, genres: arrayset };
     addMovie(movies);
